@@ -2,12 +2,12 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/obwiki?useSSL=false&characterEncoding=UTF8&autoReconnect=true&serverTimezone=Asia/Shanghai&allowMultiQueries=true
     username: root
-    password: abc2120669
+    password: 数据库密码
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: localhost
     port: 6379
-    password: abc2120669
+    password: redis密码
   # rocketmq配置
   rocketmq:
     name-server: 127.0.0.1:9876
