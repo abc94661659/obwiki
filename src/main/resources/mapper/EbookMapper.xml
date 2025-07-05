@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.obwiki.mapper.EbookMapper">
+
+    <resultMap id="BaseResultMap" type="com.gec.obwiki.entity.Ebook">
+            <id property="id" column="id" />
+            <result property="name" column="name" />
+            <result property="category1Id" column="category1_id" />
+            <result property="category2Id" column="category2_id" />
+            <result property="description" column="description" />
+            <result property="cover" column="cover" />
+            <result property="docCount" column="doc_count" />
+            <result property="viewCount" column="view_count" />
+            <result property="voteCount" column="vote_count" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,category1_id,category2_id,description,cover,
+        doc_count,view_count,vote_count
+    </sql>
+
+    <update id="increaseViewCount">
+        update ebook set view_count = view_count + 1 where id = #{id}
+    </update>
+
+    <select id="all" resultType="com.gec.obwiki.resp.EbookQueryResp">
+        select id,name,category1_id,category2_id,description,cover,
+        doc_count,view_count,vote_count from ebook
+    </select>
+</mapper>
